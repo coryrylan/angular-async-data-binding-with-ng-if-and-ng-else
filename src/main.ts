@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { Observable, of, Subscription } from 'rxjs';
@@ -7,6 +8,7 @@ import 'zone.js';
 @Component({
   selector: 'app-root',
   standalone: true,
+  imports: [CommonModule],
   template: `
     <h1>Angular Async Data Binding with ngIf and ngElse</h1>
 
@@ -72,10 +74,10 @@ import 'zone.js';
   `,
 })
 export class App {
-  user$: Observable<any>;
-  user2: Observable<any>;
-  user3: any;
-  subscription: Subscription;
+  user$!: Observable<any>;
+  user2!: Observable<any>;
+  user3!: any;
+  subscription!: Subscription;
   
   constructor() { }
   
